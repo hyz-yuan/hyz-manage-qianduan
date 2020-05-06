@@ -1,0 +1,103 @@
+.loginPage {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-size: 100% 100%;
+}
+
+.loginPage .login {
+    background: #fff;
+    width: 400px;
+    text-align: center;
+    padding: 70px 2%;
+    border-radius: 2px;
+    position: absolute;
+    top: 23%;
+    right: 5%;
+}
+/*border-radius边框圆角position:absolute绝对定位padding：内边距*/
+
+.loginPage .title {
+    font-weight: 600;
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.loginPage .title1 {
+    font-weight: 600;
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.loginPage .line {
+    border-bottom: 1px solid #d8d8d8;
+    margin: 22px 1%;
+    width: 96%;
+}
+
+.loginPage .line input {
+    border: none;
+    padding: 0px 1%;
+    margin: 1%;
+    background: #fff;
+    width: 84%;
+    font-size: 16px;
+    line-height: 30px;
+    outline: none;
+}
+/*outline: none边框属性为无*/
+
+.loginPage .line .smallImg {
+    width: 26px;
+    float: left;
+    vertical-align: middle;
+    margin-top: 1px;
+}
+
+.loginPage .errMsg {
+    text-align: left;
+    margin: 0 1%;
+    color: red;
+    font-size: 10px;
+}
+
+.loginPage .logBut {
+    background: #8BC34A;
+    width: 340px;
+    padding: 10px 80px;
+    border: none;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor:pointer;
+}
+/*cursor:pointer可点击，光标为小手*/
+
+.loginPage .logBut:hover {
+    background: #2cc313;
+}
+
+.loginPage .logBut:focus {
+    outline:0;
+}
+
+.loginPage .registerBox {
+    width: 50%;
+    cursor: pointer;
+    margin-top: 5px;
+    color: #13c2c2;
+    text-decoration: underline;
+    text-align: left;
+}
+/*text-decoration: underline设置文字下划线*/
+.loginPage .registerBox2 {
+    width: 50%;
+    cursor: pointer;
+    margin-top: 5px;
+    color: #13c2c2;
+    text-decoration: underline;
+    text-align: left;
+}

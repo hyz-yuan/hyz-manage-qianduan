@@ -4,6 +4,7 @@ import {HashRouter ,Route,Switch} from "react-router-dom";
 
 
 
+
 /*
 * 将组件你映射成路由
 */

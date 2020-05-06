@@ -2,31 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9e33cec-31ef-4f09-908a-d84724fd1fa5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/admin.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/login/images/login.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/login/login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/login/images/loginPassword.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/login/images/loginUsername.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/login/images/logo.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/login/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/fetch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myreact.iml" beforeDir="false" afterPath="$PROJECT_DIR$/myreact.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/reset.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/login.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +57,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/login/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/utils" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -82,6 +67,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\admin\react\myreact\src\utils" />
       <recent name="D:\Users\admin\react\myreact\src\pages\login\images" />
       <recent name="D:\Users\admin\react\myreact" />
     </key>
@@ -112,12 +98,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588732910188</updated>
-      <workItem from="1588732912597" duration="8817000" />
+      <workItem from="1588732912597" duration="18518000" />
     </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1588742896183</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588742896183</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588738160980">
@@ -128,37 +126,49 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="484" y="138" key="#npm_start/0.0.1536.824@0.0.1536.824" timestamp="1588737708586" />
+    <state x="385" y="5" key="CommitChangelistDialog2" timestamp="1588763550552">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="385" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588763550552" />
     <state x="631" y="308" key="Github.ShareDialog" timestamp="1588736800742">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="631" y="308" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1588736800742" />
-    <state width="1493" height="126" key="GridCell.Tab.0.bottom" timestamp="1588741253234">
+    <state width="1493" height="126" key="GridCell.Tab.0.bottom" timestamp="1588751441356">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="126" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588741253234" />
-    <state width="1493" height="126" key="GridCell.Tab.0.center" timestamp="1588741253234">
+    <state width="1493" height="126" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588751441356" />
+    <state width="1493" height="126" key="GridCell.Tab.0.center" timestamp="1588751441356">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="126" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588741253234" />
-    <state width="1493" height="126" key="GridCell.Tab.0.left" timestamp="1588741253233">
+    <state width="1493" height="126" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588751441356" />
+    <state width="1493" height="126" key="GridCell.Tab.0.left" timestamp="1588751441355">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="126" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588741253233" />
-    <state width="1493" height="126" key="GridCell.Tab.0.right" timestamp="1588741253234">
+    <state width="1493" height="126" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588751441355" />
+    <state width="1493" height="126" key="GridCell.Tab.0.right" timestamp="1588751441356">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="126" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588741253234" />
-    <state x="349" y="158" key="IDE.errors.dialog" timestamp="1588741925386">
+    <state width="1493" height="126" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588751441356" />
+    <state x="349" y="158" key="IDE.errors.dialog" timestamp="1588759422129">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="349" y="158" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1588741925386" />
+    <state x="349" y="158" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1588759422129" />
     <state x="272" y="57" key="SettingsEditor" timestamp="1588742861268">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="272" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588742861268" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1588736881883">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1588742898461">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588736881883" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588742898461" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1588757987293">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588757987293" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1588758632889">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1588758632889" />
   </component>
 </project>

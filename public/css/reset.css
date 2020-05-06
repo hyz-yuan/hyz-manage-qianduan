@@ -79,3 +79,12 @@ td:not([align]),
 th:not([align]) {
     text-align: left;
 }
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+}

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import './configs/config'
 import {HashRouter ,Route,Switch} from "react-router-dom";
 
 

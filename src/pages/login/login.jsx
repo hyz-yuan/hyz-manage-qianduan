@@ -7,6 +7,7 @@ import {createHashHistory} from "history";
 import {fetchPost} from "../../utils/fetch";
 import {message} from "antd";
 
+
 class Login extends Component {
     state = {
         username: '',
@@ -37,7 +38,7 @@ class Login extends Component {
         }
 
         // eslint-disable-next-line no-undef
-        // fetchPost('http://localhost:7080/pages/web/login', params)
+        // fetchPost('http://localhost:9080/pages/web/login', params)
         fetchPost(global.constants.login,params)
             .then(
                 res => {
@@ -45,7 +46,8 @@ class Login extends Component {
                     else if(res.errCode===20001) message.info("账号不存在")
                     else if(res.errCode===10002) message.info("未知错误")
                     else
-                        createHashHistory().push('/sys/organizationChart');
+                        /*createHashHistory().push('/sys/organizationChart');*/
+                    createHashHistory().push('/');
                     // res.userType?createHashHistory().push('/sys/projectList'):createHashHistory().push('/sys/home')
                     // if(res.userType==1)createHashHistory().push('/sys/projectList');
                     // else if(res.userType==2)createHashHistory().push('/sys/projectList');

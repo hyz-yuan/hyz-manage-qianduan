@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9e33cec-31ef-4f09-908a-d84724fd1fa5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/login/images/loginPassword.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/login/images/loginUsername.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/login/images/logo.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/login/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/fetch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/configs/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/reset.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/admin.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/login/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/login.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +61,9 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\admin\react\myreact\src\config" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Users\admin\react\myreact\src\utils" />
       <recent name="D:\Users\admin\react\myreact\src\pages\login\images" />
@@ -98,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588732910188</updated>
-      <workItem from="1588732912597" duration="18518000" />
+      <workItem from="1588732912597" duration="19815000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1588742896183</created>
@@ -107,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588742896183</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="登录界面">
+      <created>1588763555648</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588763555648</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,7 +120,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="登录界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录界面" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588738160980">
@@ -158,10 +164,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="272" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588742861268" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1588742898461">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1588763558372">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588742898461" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588763558372" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1588757987293">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

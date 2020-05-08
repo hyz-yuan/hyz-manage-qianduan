@@ -19,8 +19,8 @@ export default class App extends Component{
     return (
         <HashRouter>
           <Switch>{/*只匹配一个*/}
-              <Route exact strict path="/login" component={Login} />
-              <Route exact strict path="/" component={Admin} />
+              <Route path="/login" component={Login} />
+              <Route path="/" component={Admin} />
           </Switch>
         </HashRouter>
     );

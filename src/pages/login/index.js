@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
-import Background from './images/login.jpg';
-import LoginUsername from './images/loginUsername.png';
-import LoginPassword from './images/loginPassword.png';
+import Background from '../../assets/images/login.jpg';
+import LoginUsername from '../../assets/images/loginUsername.png';
+import LoginPassword from '../../assets/images/loginPassword.png';
 import './index.css';
 import {createHashHistory} from "history";
 import {fetchPost} from "../../utils/fetch";
-import mememoryUtils from "../../utils/mememoryUtils";
+import storageUtils from "../../utils/storageUtils";
+import mememoryUtils from "../../utils/memoryUtils";
 import {message} from "antd";
-
+import {Redirect} from "react-router-dom";
 
 class Login extends Component {
     state = {
@@ -44,19 +45,21 @@ class Login extends Component {
             .then(
                 res => {
                     if(res.errCode===20002){
-                        message.destroy();
+                        /*message.destroy();*/
                         message.error("请输入正确的帐号或密码");
                     }
                     else if(res.errCode===20001) {
-                        message.info("账号不存在");
+                        message.error("账号不存在");
                     }
                     else if(res.errCode===10002){
-                        message.info("未知错误");
+                        message.error("未知错误");
                     }
                     else{
                         /*createHashHistory().push('/');*/
                         //跳转到管理界面不需要再回退到登录界面，所以用replace
-                        mememoryUtils.user = res.user;
+                        storageUtils.saveUser(res.user);
+                        mememoryUtils.user = res.user ;
+                        message.success("登陆成功");
                         createHashHistory().replace('/');
 
                     }
@@ -83,6 +86,10 @@ class Login extends Component {
 
     render() {
         const {username, password, errMsg} = this.state;
+        const user  = mememoryUtils.user;
+        if(user && user.id){
+            return <Redirect to='/'/>
+        }
         return (
 
             <div className='loginPage' style={{backgroundImage: `url("${Background}")`}}>

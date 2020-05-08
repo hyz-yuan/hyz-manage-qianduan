@@ -2,6 +2,30 @@
 const serverUrl = "http://localhost:9080/test"
 //const serverUrl = "http://localhost:8080/manage_war/"
 global.constants = {
+
+    //我所使用到的后端端口
+    /*
+    * login
+    * */
+    login: serverUrl + '/web/login',
+    /*
+    * forgetPassword
+    * */
+    sendCode: serverUrl + '/web/sendCode',
+    passwordUpdate: serverUrl + '/web/passwordUpdate',
+    /*
+    * register
+    * */
+    insertUser:serverUrl + '/user/insertUser',
+    /*
+    * message
+    * */
+    getMessageList: serverUrl + '/message/getList',
+    insertNewMessage: serverUrl + '/message/insertNewMessage',
+    updateReader: serverUrl + '/message/updateReader',
+    sendMessageHelp: serverUrl + '/message/sendMessageHelp',
+
+
     // create by ljh ---begin
     projectListByMid: serverUrl + '/project/getProjectByManagerId',
     progressList: serverUrl + '/progress/getProgressList',
@@ -37,9 +61,7 @@ global.constants = {
     downloadFile: serverUrl + '/upload/downloadFileEx',
     uploadFile: serverUrl + '/upload/uploadReport',
     //dzh
-    login: serverUrl + '/web/login',
-    sendCode: serverUrl + '/web/sendCode',
-    codeMaching: serverUrl + '/web/codeMaching',
+
     logout: serverUrl + '/web/logout',
     getRole:serverUrl+'/manage1/selectRightByRole',
     setPerson:serverUrl+'/project1/setPerson',
@@ -77,7 +99,7 @@ global.constants = {
     getGroupUser:serverUrl + '/project/getGroupUsers',
     getGroupPerson:serverUrl + '/project/getGroupPerson',
     //yxy
-    insertUser:serverUrl + '/web/register',
+
     selectUsername:serverUrl + '/web/selectusername',
     mapData:[{
         point:"118.585946,37.455028",

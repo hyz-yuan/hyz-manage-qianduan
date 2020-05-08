@@ -60,7 +60,7 @@ class Login extends Component {
                         storageUtils.saveUser(res.user);
                         mememoryUtils.user = res.user ;
                         message.success("登陆成功");
-                        createHashHistory().replace('/');
+                        createHashHistory().replace('/sys');
 
                     }
                     /*createHashHistory().push('/sys/organizationChart');*/
@@ -88,7 +88,7 @@ class Login extends Component {
         const {username, password, errMsg} = this.state;
         const user  = mememoryUtils.user;
         if(user && user.id){
-            return <Redirect to='/'/>
+            return <Redirect to='/sys'/>
         }
         return (
 
@@ -107,8 +107,11 @@ class Login extends Component {
                     </div>
                     <div className='errMsg'>{errMsg}</div>
                     <button type="button" className="logBut" onClick={this.handleLogin}>登&nbsp;&nbsp;录</button>
-                    <div className='-' onClick={this.forgetPassword}>
-                        忘记密码?
+                    <div className='-'>
+                        <a href='javascript:' onClick={this.forgetPassword}>
+                            忘记密码?
+                        </a>
+
                     </div>
 
                     <div className='registerBox2' onClick={this.register}>

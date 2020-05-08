@@ -1,60 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9e33cec-31ef-4f09-908a-d84724fd1fa5" name="Default Changelist" comment="wu">
-      <change afterPath="$PROJECT_DIR$/public/css/reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/left-bar/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/left-bar/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/charts/organizationChart/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/charts/organizationChart/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/home/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/home/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage/place/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage/place/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage/right/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage/right/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage/role/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage/role/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage/technology/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage/technology/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage/user/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage/user/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/message/MessageInsert.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/message/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/message/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/project/details/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/project/details/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/project/list/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/project/list/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/project/manage/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/project/manage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/project/progress/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/project/progress/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/project/setup/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/project/setup/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/work/details/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/work/details/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/work/list/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/work/list/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/work/report/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/work/report/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/dateUtils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/storageUtils.js" afterDir="false" />
+    <list default="true" id="b9e33cec-31ef-4f09-908a-d84724fd1fa5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/loginCompany.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/login/forgetpassword/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/login/forgetpassword/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/login/register/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/login/register/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/left-bar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/left-bar/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configs/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/images/login.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/login.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/images/loginPassword.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/loginPassword.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/images/loginUsername.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/loginUsername.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/images/logo.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/logo.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/mememoryUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/memoryUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/message/MessageInsert.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/message/MessageInsert.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/message/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/message/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +60,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/message" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/login/register" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -121,11 +81,11 @@
       <recent name="D:\Users\admin\react\myreact\src\assets" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\admin\react\myreact\src\pages\login\register" />
+      <recent name="D:\Users\admin\react\myreact\src\assets\images" />
+      <recent name="D:\Users\admin\react\myreact\src\pages\login\forgetpassword" />
       <recent name="D:\Users\admin\react\myreact\src\pages\message" />
       <recent name="D:\Users\admin\react\myreact\src\pages\work\report" />
-      <recent name="D:\Users\admin\react\myreact\src\pages\work\list" />
-      <recent name="D:\Users\admin\react\myreact\src\pages\project\project-setup" />
-      <recent name="D:\Users\admin\react\myreact\src\pages\project\project-progress" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -154,7 +114,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588732910188</updated>
-      <workItem from="1588732912597" duration="56808000" />
+      <workItem from="1588732912597" duration="68910000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1588742896183</created>
@@ -184,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588821243742</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="完善了leftBar簡單的跳转菜单，静态的&#10;移植了Message到系统，能正常运行">
+      <created>1588912401347</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588912401347</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +162,8 @@
     <MESSAGE value="登录界面" />
     <MESSAGE value="添加config.js文件&#10;App.js添加全局变量config" />
     <MESSAGE value="wu" />
-    <option name="LAST_COMMIT_MESSAGE" value="wu" />
+    <MESSAGE value="完善了leftBar簡單的跳转菜单，静态的&#10;移植了Message到系统，能正常运行" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善了leftBar簡單的跳转菜单，静态的&#10;移植了Message到系统，能正常运行" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#ESLint" timestamp="1588817367270">
@@ -214,30 +182,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="484" y="138" key="#npm_start/0.0.1536.824@0.0.1536.824" timestamp="1588737708586" />
-    <state x="385" y="0" key="CommitChangelistDialog2" timestamp="1588824775378">
+    <state x="385" y="0" key="CommitChangelistDialog2" timestamp="1588912396353">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="385" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588824775378" />
+    <state x="385" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588912396353" />
     <state x="631" y="308" key="Github.ShareDialog" timestamp="1588736800742">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="631" y="308" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1588736800742" />
-    <state width="1493" height="126" key="GridCell.Tab.0.bottom" timestamp="1588911724002">
+    <state width="1493" height="126" key="GridCell.Tab.0.bottom" timestamp="1588920912194">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="126" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588911724002" />
-    <state width="1493" height="126" key="GridCell.Tab.0.center" timestamp="1588911724002">
+    <state width="1493" height="126" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588920912194" />
+    <state width="1493" height="126" key="GridCell.Tab.0.center" timestamp="1588920912194">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="126" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588911724002" />
-    <state width="1493" height="126" key="GridCell.Tab.0.left" timestamp="1588911724001">
+    <state width="1493" height="126" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588920912194" />
+    <state width="1493" height="126" key="GridCell.Tab.0.left" timestamp="1588920912194">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="126" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588911724001" />
-    <state width="1493" height="126" key="GridCell.Tab.0.right" timestamp="1588911724002">
+    <state width="1493" height="126" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588920912194" />
+    <state width="1493" height="126" key="GridCell.Tab.0.right" timestamp="1588920912194">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="126" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588911724002" />
+    <state width="1493" height="126" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588920912194" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588818230860">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -286,25 +254,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1588818230861" />
-    <state x="349" y="158" key="IDE.errors.dialog" timestamp="1588912109131">
+    <state x="349" y="158" key="IDE.errors.dialog" timestamp="1588936090766">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="349" y="158" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1588912109131" />
+    <state x="349" y="158" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1588936090766" />
     <state x="272" y="57" key="SettingsEditor" timestamp="1588742861268">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="272" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588742861268" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1588821245054">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1588912403243">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588821245054" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588912403243" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1588757987293">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588757987293" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1588847221024">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1588923868469">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1588847221024" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1588923868469" />
   </component>
 </project>

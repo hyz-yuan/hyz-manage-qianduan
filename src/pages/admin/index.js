@@ -2,7 +2,7 @@ import React,{Component} from "react";
 import {Layout} from "antd";
 import mememoryUtils from "../../utils/memoryUtils";
 import {Redirect, Route, Switch} from "react-router-dom";
-
+import {HashRouter} from "react-router-dom";
 
 /*
 * 引入路由
@@ -61,29 +61,32 @@ export default class Admin  extends Component{
                 <Layout>
                     <Headers>Header</Headers>
                     <Content style={{margin: '10px',backgroundColor:"#fff",height:'100%'}}>
-                        <Switch>
-                            {/*manage*/}
-                            <Route path='/manage/user' component={User} />
-                            <Route path='/manage/role' component={Role} />
-                            <Route path='/manage/right' component={Right} />
-                            <Route path='/manage/technology' component={Technology} />
-                            <Route path='/manage/place' component={Place} />
-                            {/*project*/}
-                            <Route path='/project/details' component={ProjectDetails} />
-                            <Route path='/project/list' component={ProjectList} />
-                            <Route path='/project/manage' component={Manage} />
-                            <Route path='/project/progress' component={Progress} />
-                            <Route path='/project/setup' component={Setup} />
-                            {/*work*/}
-                            <Route path='/work/details' component={WorkDetails} />
-                            <Route path='/work/list' component={WorkList} />
-                            <Route path='/work/report' component={Report} />
+                        <HashRouter>
+                            <Switch>
+                                {/*manage*/}
+                                <Route exact='false' path='/manage/user' component={User} />
+                                <Route path='/sys/manage/role' component={Role} />
+                                <Route path='/sys/manage/right' component={Right} />
+                                <Route path='/sys/manage/technology' component={Technology} />
+                                <Route path='/sys/manage/place' component={Place} />
+                                {/*project*/}
+                                <Route path='/sys/project/details' component={ProjectDetails} />
+                                <Route path='/sys/project/list' component={ProjectList} />
+                                <Route path='/sys/project/manage' component={Manage} />
+                                <Route path='/sys/project/progress' component={Progress} />
+                                <Route path='/sys/project/setup' component={Setup} />
+                                {/*work*/}
+                                <Route path='/sys/work/details' component={WorkDetails} />
+                                <Route path='/sys/work/list' component={WorkList} />
+                                <Route path='/sys/work/report' component={Report} />
 
-                            <Route path='/charts/organizationChart' component={OrganizationChart} />
-                            <Route path='/home' component={Home} />
-                            <Route path='/message' component={Message} />
-                            <Redirect to='/home'/>
-                        </Switch>
+                                <Route path='/sys/charts/organizationChart' component={OrganizationChart} />
+                                <Route path='/sys/home' component={Home} />
+                                <Route path='/sys/message' component={Message} />
+
+                                <Redirect to='/sys/home'/>
+                            </Switch>
+                        </HashRouter>
                     </Content>
                     <Footer style={{textAlign: 'center', color : '#cccccc'}}>何远志出品</Footer>
                 </Layout>

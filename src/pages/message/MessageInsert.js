@@ -16,35 +16,36 @@ class MessageInsert extends Component{
         select1Value:[],
         select2Value:[],
         inputData :[],
-    }
+    };
 
     changeInput=(value,option)=>{
         /*let data=this.props.insertData;
         data[option]=value;
         this.props.dispatchData(data);*/
         alert("value："+value + "  Option :" + option);
-    }
+    };
     getReturn=()=>{
 
        /* this.props.onRef*/
 
-    }
+    };
 
     getData = ()=>{
         let params = {
-        }
-        fetchPost("http://localhost:9080/test/message/test",params)
+        };
+        //为发送信息提供名单（项目，小组，人员）
+        fetchPost(global.constants.sendMessageHelp,params)
             .then(
                 (res)=>this.setData(res)
             )
             .finally()
-    }
+    };
     setData=(list)=>{
-        console.log(list)
+        console.log(list);
         this.setState({
             data:list
         })
-    }
+    };
     componentDidMount() {
         this.props.onRef(this);
         this.getData();
@@ -81,7 +82,7 @@ class MessageInsert extends Component{
         this.setState({
             select1Value: optionValue
         })
-    }
+    };
     getSelectContent =(value)=>{
         this.setState({
             insertMessageData : {
@@ -91,7 +92,7 @@ class MessageInsert extends Component{
             select2Value: value
         });
 
-    }
+    };
     render() {
        
         return(

@@ -49,7 +49,7 @@ class Message extends  Component{
         let params = {
             id:2
         }
-        fetchPost("http://localhost:9080/test/message/getList",params)
+        fetchPost(global.constants.getMessageList,params)
             .then( res => this.handleMessageData(res))
             .catch(e => console.log(e))
             .finally(() => {
@@ -124,7 +124,7 @@ class Message extends  Component{
 
         };
         console.log(params)
-        fetchPost("http://localhost:9080/test/message/insertNewMessage",params)
+        fetchPost(global.constants.insertNewMessage,params)
             .then()
             .finally(()=>{
                 this.setState({
@@ -159,7 +159,7 @@ class Message extends  Component{
             ...data,
 
         };
-        fetchPost("http://localhost:9080/test/message/updateReader",params)
+        fetchPost(global.constants.updateReader,params)
             .then()
             .finally(()=>{
                 this.setState({

@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9e33cec-31ef-4f09-908a-d84724fd1fa5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/loginCompany.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/login/forgetpassword/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/login/forgetpassword/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/login/register/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/login/register/index.js" afterDir="false" />
+    <list default="true" id="b9e33cec-31ef-4f09-908a-d84724fd1fa5" name="Default Changelist" comment="完成了forgetPassword&#10;初步写了register">
+      <change afterPath="$PROJECT_DIR$/src/components/rightBodyHeaderBar/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/rightBodyHeaderBar/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/manage/place/test/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/left-bar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/left-bar/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/configs/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/message/MessageInsert.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/message/MessageInsert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/message/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/message/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage/place/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage/place/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage/right/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage/right/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage/role/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage/role/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage/technology/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage/technology/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manage/user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage/user/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +58,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/login/register" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/manage/place/test" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,11 +79,11 @@
       <recent name="D:\Users\admin\react\myreact\src\assets" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\admin\react\myreact\src\pages\manage\place\test" />
+      <recent name="D:\Users\admin\react\myreact\src\components" />
       <recent name="D:\Users\admin\react\myreact\src\pages\login\register" />
       <recent name="D:\Users\admin\react\myreact\src\assets\images" />
       <recent name="D:\Users\admin\react\myreact\src\pages\login\forgetpassword" />
-      <recent name="D:\Users\admin\react\myreact\src\pages\message" />
-      <recent name="D:\Users\admin\react\myreact\src\pages\work\report" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -114,7 +112,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588732910188</updated>
-      <workItem from="1588732912597" duration="68910000" />
+      <workItem from="1588732912597" duration="81945000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1588742896183</created>
@@ -151,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588912401347</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="完成了forgetPassword&#10;初步写了register">
+      <created>1588937779177</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1588937779178</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,13 +168,18 @@
     <MESSAGE value="添加config.js文件&#10;App.js添加全局变量config" />
     <MESSAGE value="wu" />
     <MESSAGE value="完善了leftBar簡單的跳转菜单，静态的&#10;移植了Message到系统，能正常运行" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善了leftBar簡單的跳转菜单，静态的&#10;移植了Message到系统，能正常运行" />
+    <MESSAGE value="完成了forgetPassword&#10;初步写了register" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了forgetPassword&#10;初步写了register" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#ESLint" timestamp="1588817367270">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="74" key="#ESLint/0.0.1536.824@0.0.1536.824" timestamp="1588817367270" />
+    <state x="361" y="74" key="#Inspections" timestamp="1588940108581">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="74" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1588940108581" />
     <state x="399" y="105" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1588827614432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -182,10 +192,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="484" y="138" key="#npm_start/0.0.1536.824@0.0.1536.824" timestamp="1588737708586" />
-    <state x="385" y="0" key="CommitChangelistDialog2" timestamp="1588912396353">
+    <state x="385" y="0" key="CommitChangelistDialog2" timestamp="1588937797416">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="385" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588912396353" />
+    <state x="385" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588937797416" />
     <state x="631" y="308" key="Github.ShareDialog" timestamp="1588736800742">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -266,13 +276,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588912403243" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1588757987293">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1589004467542">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588757987293" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1588923868469">
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589004467542" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589008051565">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1588923868469" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589008051565" />
   </component>
 </project>

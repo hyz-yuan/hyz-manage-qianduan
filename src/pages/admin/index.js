@@ -64,7 +64,7 @@ export default class Admin  extends Component{
                         <HashRouter>
                             <Switch>
                                 {/*manage*/}
-                                <Route exact='false' path='/manage/user' component={User} />
+                                <Route path='/sys/manage/user' component={User} />
                                 <Route path='/sys/manage/role' component={Role} />
                                 <Route path='/sys/manage/right' component={Right} />
                                 <Route path='/sys/manage/technology' component={Technology} />

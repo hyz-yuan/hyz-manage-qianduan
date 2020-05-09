@@ -1,5 +1,5 @@
 // const serverUrl = "http://123.162.181.106:48080/test"
-const serverUrl = "http://localhost:9080/test"
+const serverUrl = "http://localhost:9080/test";
 //const serverUrl = "http://localhost:8080/manage_war/"
 global.constants = {
 
@@ -16,7 +16,8 @@ global.constants = {
     /*
     * register
     * */
-    insertUser:serverUrl + '/user/insertUser',
+    insertUser:serverUrl + '/user/allUser',
+    allUser:serverUrl + '/user/allUser',
     /*
     * message
     * */
@@ -24,6 +25,20 @@ global.constants = {
     insertNewMessage: serverUrl + '/message/insertNewMessage',
     updateReader: serverUrl + '/message/updateReader',
     sendMessageHelp: serverUrl + '/message/sendMessageHelp',
+    /*
+    * role
+    * */
+    setRoleList: serverUrl + '/manage/Role',
+    insertRole: serverUrl + '/manage/insertNewRole',
+    deleteRole: serverUrl + '/manage/deleteRole',
+    updateRole: serverUrl + '/manage/updateRole',
+    /*
+    * right
+    * */
+    setRightList: serverUrl + '/right/getAllViewRights',
+    insertRight: serverUrl + '/right/insertNewRight',
+    deleteRight: serverUrl + '/right/deleteRight',
+    updateRight: serverUrl + '/right/updateRight',
 
 
     // create by ljh ---begin
@@ -72,15 +87,9 @@ global.constants = {
     //dzw
     projectDetailSingle: serverUrl + '/project1/getProjectDetail',
     //ln
-    setRightList: serverUrl + '/manage1/setRight',
-    insertRight: serverUrl + '/manage1/insertNewRight',
-    deleteRight: serverUrl + '/manage1/deleteRight',
-    updateRight: serverUrl + '/manage1/updateRight',
 
-    setRoleList: serverUrl + '/manage1/Role',
-    insertRole: serverUrl + '/manage1/insertNewRole',
-    deleteRole: serverUrl + '/manage1/deleteRole',
-    updateRole: serverUrl + '/manage1/updateRole',
+
+
 
     getEmployee: serverUrl + '/manage1/getEmployee',
     searchEmployee: serverUrl + '/manage1/search',

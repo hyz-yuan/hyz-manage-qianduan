@@ -25,7 +25,7 @@ export default class Details extends Component{
             projectId: this.state.conditions.projectId,
             groupId:  this.state.conditions.groupId,
             employeeId:  this.state.conditions.userId
-        }
+        };
         fetchPost(global.constants.getProjectReportList,params)
             .then( res => this.setReportData(res))
             .catch(e => console.log(e))
@@ -33,7 +33,7 @@ export default class Details extends Component{
 
             })
 
-    }
+    };
     componentDidMount(){
         this.requestList()
     }
@@ -48,18 +48,18 @@ export default class Details extends Component{
                 }
             })
         })
-    }
+    };
     handleOperator = ()=>{
         this.setState({
             visible:true
 
         })
-    }
+    };
     handleSubmit = ()=>{
         const { projectId,groupId,userId,projectName,groupName,userName} = this.state.conditions;
 
         let data = this.state.insertData;
-        let s =JSON.stringify(data.document)
+        let s =JSON.stringify(data.document);
 
         let params = {
             type:data.type,
@@ -72,10 +72,10 @@ export default class Details extends Component{
             groupName,
             employeeName:userName,
             operator:userName
-        }
+        };
         if(data.type===undefined||data.content===undefined)
         {
-            Modal.error({title:"请填写所有带*号的选项"})
+            Modal.error({title:"请填写所有带*号的选项"});
             return
         }
 
@@ -85,14 +85,14 @@ export default class Details extends Component{
                 this.setState({
                     visible:false,
                     insertData:''
-                })
+                });
                 this.requestList()
             })
-    }
+    };
     handleExport=(name)=>{
         // window.open('http://localhost:9080/test/upload/downloadFileEx?name='+name)
         window.open(global.constants.downloadFile +'?name='+name)
-    }
+    };
 
     render() {
 
@@ -114,7 +114,7 @@ export default class Details extends Component{
                 dataIndex: 'document',
 
                 render:(text,record)=>{
-                    let list = JSON.parse(record.document)
+                    let list = JSON.parse(record.document);
                     return list.map((item, index) => {
 
                         return <li key={index}>
@@ -125,7 +125,7 @@ export default class Details extends Component{
             },
 
         ];
-        const data = this.state.reportList||{}
+        const data = this.state.reportList||{};
         return(
             <div>
                 <Table dataSource={data} columns={columns} />

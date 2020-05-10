@@ -3,7 +3,7 @@ import {fetchPost} from "../../../utils/fetch";
 import {Table,Modal} from 'antd';
 import moment from "moment";
 import ReportDetails from './../details'
-
+import memoryUtils from "../../../utils/memoryUtils";
 
 export default class List extends Component{
 
@@ -14,8 +14,9 @@ export default class List extends Component{
         isVisible:false
     };
     requestList= ()=>{
-
-        fetchPost(global.constants.getProjectEmployeeRoleList,{})
+        const user = memoryUtils.user;
+        console.log(user);
+        fetchPost(global.constants.getProjectEmployeeRoleList,user)
             .then(
                 res => this.setData(res)
 

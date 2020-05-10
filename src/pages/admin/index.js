@@ -58,9 +58,9 @@ export default class Admin  extends Component{
                 <Sider>
                     <LeftBar/>
                 </Sider>
-                <Layout>
-                    <Headers>Header</Headers>
-                    <Content style={{margin: '10px',backgroundColor:"#fff",height:'100%'}}>
+                <Layout style={{backgroundColor:"#fff"}} >
+                    <Headers style={{ height: '10%' }}/>
+                    <div style={{backgroundColor:"#fff",height:'100%'}}>
                         <HashRouter>
                             <Switch>
                                 {/*manage*/}
@@ -87,15 +87,9 @@ export default class Admin  extends Component{
                                 <Redirect to='/sys/home'/>
                             </Switch>
                         </HashRouter>
-                    </Content>
-                    <Footer style={{textAlign: 'center', color : '#cccccc'}}>何远志出品</Footer>
+                    </div>
+                    {/*<Footer style={{textAlign: 'center', color : '#fff',height:'0%'}}>何远志出品</Footer>*/}
                 </Layout>
-                {/*<Button onClick={()=>{
-                    storageUtils.removeUser();
-                    mememoryUtils.user={};
-                    message.success('退出成功');
-                    createHashHistory().replace('/login') ;
-                }}>退出</Button>*/}
             </Layout>
         )
     }

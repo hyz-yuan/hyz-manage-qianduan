@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9e33cec-31ef-4f09-908a-d84724fd1fa5" name="Default Changelist" comment="完成了forgetPassword&#10;初步写了register">
-      <change afterPath="$PROJECT_DIR$/src/components/rightBodyHeaderBar/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rightBodyHeaderBar/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/manage/place/test/index.js" afterDir="false" />
+    <list default="true" id="b9e33cec-31ef-4f09-908a-d84724fd1fa5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/project/list/saveTest/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/work/insert/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/configs/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/manage/place/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage/place/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/manage/right/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage/right/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/manage/role/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage/role/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/charts/organizationChart/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/charts/organizationChart/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/manage/technology/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage/technology/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/manage/user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manage/user/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/project/details/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/details/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/project/details/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/details/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/project/list/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project/list/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/work/details/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/work/details/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/work/list/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/work/list/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +60,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/manage/place/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/project/details" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -79,11 +81,11 @@
       <recent name="D:\Users\admin\react\myreact\src\assets" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\admin\react\myreact\src\pages\project\details" />
+      <recent name="D:\Users\admin\react\myreact\src\pages\project\list\saveTest" />
       <recent name="D:\Users\admin\react\myreact\src\pages\manage\place\test" />
       <recent name="D:\Users\admin\react\myreact\src\components" />
       <recent name="D:\Users\admin\react\myreact\src\pages\login\register" />
-      <recent name="D:\Users\admin\react\myreact\src\assets\images" />
-      <recent name="D:\Users\admin\react\myreact\src\pages\login\forgetpassword" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -112,7 +114,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588732910188</updated>
-      <workItem from="1588732912597" duration="81945000" />
+      <workItem from="1588732912597" duration="100395000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1588742896183</created>
@@ -156,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588937779178</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="基本修复了place&#10;复制tecnology等待修改">
+      <created>1589008747207</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1589008747207</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +178,8 @@
     <MESSAGE value="wu" />
     <MESSAGE value="完善了leftBar簡單的跳转菜单，静态的&#10;移植了Message到系统，能正常运行" />
     <MESSAGE value="完成了forgetPassword&#10;初步写了register" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了forgetPassword&#10;初步写了register" />
+    <MESSAGE value="基本修复了place&#10;复制tecnology等待修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="基本修复了place&#10;复制tecnology等待修改" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#ESLint" timestamp="1588817367270">
@@ -192,30 +202,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="484" y="138" key="#npm_start/0.0.1536.824@0.0.1536.824" timestamp="1588737708586" />
-    <state x="385" y="0" key="CommitChangelistDialog2" timestamp="1588937797416">
+    <state x="385" y="0" key="CommitChangelistDialog2" timestamp="1589008744665">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="385" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588937797416" />
+    <state x="385" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589008744665" />
     <state x="631" y="308" key="Github.ShareDialog" timestamp="1588736800742">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="631" y="308" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1588736800742" />
-    <state width="1493" height="126" key="GridCell.Tab.0.bottom" timestamp="1588920912194">
+    <state width="1493" height="126" key="GridCell.Tab.0.bottom" timestamp="1589011522894">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="126" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588920912194" />
-    <state width="1493" height="126" key="GridCell.Tab.0.center" timestamp="1588920912194">
+    <state width="1493" height="126" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589011522894" />
+    <state width="1493" height="126" key="GridCell.Tab.0.center" timestamp="1589011522894">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="126" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588920912194" />
-    <state width="1493" height="126" key="GridCell.Tab.0.left" timestamp="1588920912194">
+    <state width="1493" height="126" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589011522894" />
+    <state width="1493" height="126" key="GridCell.Tab.0.left" timestamp="1589011522894">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="126" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588920912194" />
-    <state width="1493" height="126" key="GridCell.Tab.0.right" timestamp="1588920912194">
+    <state width="1493" height="126" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589011522894" />
+    <state width="1493" height="126" key="GridCell.Tab.0.right" timestamp="1589011522894">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="126" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588920912194" />
+    <state width="1493" height="126" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589011522894" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588818230860">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -264,25 +274,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1588818230861" />
-    <state x="349" y="158" key="IDE.errors.dialog" timestamp="1588936090766">
+    <state x="349" y="158" key="IDE.errors.dialog" timestamp="1589089237192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="349" y="158" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1588936090766" />
+    <state x="349" y="158" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1589089237192" />
     <state x="272" y="57" key="SettingsEditor" timestamp="1588742861268">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="272" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588742861268" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1588912403243">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1589009362226">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588912403243" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589009362226" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1589004467542">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589004467542" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589008051565">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589099978772">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589008051565" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589099978772" />
   </component>
 </project>

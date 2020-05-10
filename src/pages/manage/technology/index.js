@@ -9,6 +9,34 @@ import {useContext} from "react";
 import {useEffect} from "react";
 const EditableContext = React.createContext();
 export default class Technology extends React.Component{
+    state={
+        columns: [
+            {
+                title: '上级名称',
+                dataIndex: 'pId',
+                width: '30%',
+                inputType:'select',
+                editable: true,
+            },
+            {
+                title: '技术名称',
+                dataIndex: 'technologyName',
+                editable: true,
+            },
+            {
+                title: '操作',
+                dataIndex: 'operation',
+                render: (text, record) =>
+                    this.state.dataSource.length >= 1 ? (
+                        <Popconfirm title="确认删除吗?" onConfirm={() => this.handleDelete(record.key)}>
+                            <a>删除</a>
+                        </Popconfirm>
+                    ) : null,
+            },
+        ],
+        title:"技术管理",
+        dataSource: [],
+    };
 
     EditableRow = ({ index, ...props }) => {
         const [form] = Form.useForm();
@@ -90,34 +118,7 @@ export default class Technology extends React.Component{
     };
 
 
-    state={
-        columns: [
-            {
-                title: '上级名称',
-                dataIndex: 'pId',
-                width: '30%',
-                inputType:'select',
-                editable: true,
-            },
-            {
-                title: '技术名称',
-                dataIndex: 'technologyName',
-                editable: true,
-            },
-            {
-                title: '操作',
-                dataIndex: 'operation',
-                render: (text, record) =>
-                    this.state.dataSource.length >= 1 ? (
-                        <Popconfirm title="确认删除吗?" onConfirm={() => this.handleDelete(record.key)}>
-                            <a>删除</a>
-                        </Popconfirm>
-                    ) : null,
-            },
-        ],
-        title:"技术管理",
-        dataSource: [],
-    };
+
     options=[];//下列列表选项
     componentDidMount() {
         this.loadData();
@@ -221,9 +222,7 @@ export default class Technology extends React.Component{
             };
         });
         return (
-            <div>
-                <RightBodyHeaderBar title={this.state.title}/>
-                <div>
+                <div style={{width:'100%'}}>
                     <Button
                         onClick={this.handleAdd}
                         type="primary"
@@ -240,9 +239,9 @@ export default class Technology extends React.Component{
                         bordered
                         dataSource={dataSource}
                         columns={columns}
+                        scroll={{ y: 425 }}
                     />
                 </div>
-            </div>
         )
     }
 }

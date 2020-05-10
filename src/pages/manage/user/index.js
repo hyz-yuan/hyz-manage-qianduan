@@ -58,7 +58,7 @@ export default class User extends Component{
                <Select
                    value={this.state.data[record.key].roleName}
                    style={{ width: '100%' }}
-                   onSelect={(e,obj)=>this.handleChangeSelect({role:e},{roleName: obj.props.children},record)}
+                   onChange={(e,obj)=>this.handleChangeSelect({role:e},{roleName: obj.props.children},record)}
                >
                       {this.state.role.map((item,index) => <Option key={index} value={item.roleId}>{item.roleName}</Option>)}
                  </Select>
@@ -115,6 +115,9 @@ export default class User extends Component{
             }
         )
     };
+    /*
+    * 设置技术领域的数据
+    * */
     setTechnologyData =(list)=>{
         this.setState({
                 technology: list.map((item, index) => {
@@ -129,6 +132,9 @@ export default class User extends Component{
             }
         )
     };
+    /*
+    * 设置工作地的数据
+    * */
     setWorkPlaceData =(list)=>{
         this.setState({
                 area: list.map((item, index) => {
@@ -144,6 +150,9 @@ export default class User extends Component{
             }
         )
     };
+    /*
+    * 获取所有数据user,role,place,technology
+    * */
     selectAllData=()=>{
         let params={};
         fetchPost(global.constants.allUser,params)
@@ -233,6 +242,7 @@ export default class User extends Component{
             id: record.id,
             visible: true });
     };
+
     handleInputPass=(checkedValues)=>{
         this.setState({password:checkedValues})
     };
@@ -257,7 +267,9 @@ export default class User extends Component{
                 })
             })
     };
-
+    /*
+    * 查询模块
+    * */
     //查询员工
     handleSetName=(value)=>{
         this.setState({

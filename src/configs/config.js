@@ -39,6 +39,49 @@ global.constants = {
     insertRight: serverUrl + '/right/insertNewRight',
     deleteRight: serverUrl + '/right/deleteRight',
     updateRight: serverUrl + '/right/updateRight',
+    /*
+    * technology
+    * */
+    technologySelect: serverUrl + '/technology/selectTechnology',
+    updateTechnology: serverUrl + '/technology/updateTechnology',
+    insertTechnology: serverUrl + '/technology/insertNewTechnology',
+    deleteTechnology: serverUrl + '/technology/deleteNewTechnology',
+    selectTechnology: serverUrl + '/technology/selectTechnology',
+    /*
+    * user
+    * */
+    changePassword: serverUrl + '/user/changePassword',
+    searchEmployee: serverUrl + '/Employee/search',
+    getEmployee: serverUrl + '/Employee/getEmployee',
+    deleteUser: serverUrl + '/Employee/deleteUser',
+    updateUser: serverUrl + '/Employee/updateUser',
+    /*
+    * place
+    * */
+    selectWorkPlace: serverUrl + '/workPlace/selectWorkPlace',
+    WorkPlaceSelect: serverUrl + '/workPlace/selectWorkPlace',
+    updateWorkPlace: serverUrl + '/workPlace/updateWorkPlace',
+    insertWorkPlace: serverUrl + '/workPlace/insertWorkPlace',
+    deleteWorkPlace: serverUrl + '/workPlace/deleteWorkPlace',
+    workPlaceList: serverUrl + '/workPlace/list',
+    /*
+    * project需要用到的
+    * */
+    deleteProject: serverUrl + '/project/deleteProject',
+    projectList: serverUrl + '/project/projectList',
+    projectDetailSingle: serverUrl + '/project/getProjectDetail',
+    /*
+    * charts
+    * */
+    organizationChart: serverUrl + '/teamStructure/getTeamStructure',
+    /*
+    * work
+    * */
+    getProjectEmployeeRoleList: serverUrl + '/project/getProjectEmployeeRoleList',
+    getProjectReportList: serverUrl + '/projectReport/getProjectReportList',
+    insertReport: serverUrl + '/projectReport/insertProjectReportList',
+    downloadFile: serverUrl + '/upload/downloadFileEx',
+    uploadFile: serverUrl + '/upload/uploadReport',
 
 
     // create by ljh ---begin
@@ -48,58 +91,49 @@ global.constants = {
     updateProgress: serverUrl + '/progress/updateProgressList',
     deleteProgress: serverUrl + '/progress/deleteProgressList',
     projectDetail: serverUrl + '/porject/projectDetail',
-    technologySelect: serverUrl + '/technology/selectTechnology',
-    updateTechnology: serverUrl + '/technology/updateTechnology',
-    insertTechnology: serverUrl + '/technology/insertNewTechnology',
-    deleteTechnology: serverUrl + '/technology/deleteNewTechnology',
 
-    WorkPlaceSelect: serverUrl + '/workPlace/selectWorkPlace',
-    updateWorkPlace: serverUrl + '/workPlace/updateWorkPlace',
-    insertWorkPlace: serverUrl + '/workPlace/insertWorkPlace',
-    deleteWorkPlace: serverUrl + '/workPlace/deleteWorkPlace',
+
+
 
     rightsList: serverUrl + '/manage1/setRight',
     // create by ljh ---end
 
     //gsl用到的后端接口
-    projectList: serverUrl + '/project2/projectList',
+
     addProject: serverUrl + '/project1/addProject',
-    deleteProject: serverUrl + '/project1/deleteProject',
+
     changeProject: serverUrl + '/project1/changeProject',
     getProject: serverUrl + '/project1/getProject',
-    workPlaceList: serverUrl + '/workPlace/list',
+
     managerList: serverUrl+'/user/manager',
     //wjb
-    getProjectEmployeeRoleList: serverUrl + '/project/getProjectEmployeeRoleList',
-    getProjectReportList: serverUrl + '/projectReport/getProjectReportList',
-    insertReport: serverUrl + '/projectReport/insertProjectReportList',
-    downloadFile: serverUrl + '/upload/downloadFileEx',
-    uploadFile: serverUrl + '/upload/uploadReport',
+
+
+
+
+
     //dzh
 
     logout: serverUrl + '/web/logout',
     getRole:serverUrl+'/manage1/selectRightByRole',
     setPerson:serverUrl+'/project1/setPerson',
     //hyz
-    organizationChart: serverUrl + '/teamStructure/getTeamStructure',
+
     //yxy
     register: serverUrl + '/web/register',
     //dzw
-    projectDetailSingle: serverUrl + '/project1/getProjectDetail',
+
     //ln
 
 
 
 
-    getEmployee: serverUrl + '/manage1/getEmployee',
-    searchEmployee: serverUrl + '/manage1/search',
-    deleteUser: serverUrl + '/manage1/deleteUser',
-    updateUser: serverUrl + '/manage1/updateUser',
-    changePassword: serverUrl + '/manage1/changePassword',
+
+
     selectItem: serverUrl + '/manage1/selectItem',
     //刘宁用到的工作地点和技术领域接口
-    selectWorkPlace: serverUrl + '/workPlace/selectWorkPlace',
-    selectTechnology: serverUrl + '/technology/selectTechnology',
+
+
     //xjs
     deleteGroup:serverUrl + '/project/deleteGroup',
     addGroup:serverUrl + '/project/addGroup',

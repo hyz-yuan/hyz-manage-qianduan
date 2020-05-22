@@ -43,6 +43,7 @@ global.constants = {
     * technology
     * */
     technologySelect: serverUrl + '/technology/selectTechnology',
+    technologySelectP: serverUrl + '/technology/selectPTechnology',
     updateTechnology: serverUrl + '/technology/updateTechnology',
     insertTechnology: serverUrl + '/technology/insertNewTechnology',
     deleteTechnology: serverUrl + '/technology/deleteNewTechnology',

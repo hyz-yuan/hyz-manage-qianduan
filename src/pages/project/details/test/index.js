@@ -57,9 +57,7 @@ export default class Detail extends Component {
                 })
             );
     };
-    /*
-    * 从服务器获取数据，渲染到内存
-    * */
+
     setData = (res) => {
         let group = [];
         //获取所有组id
@@ -99,7 +97,7 @@ export default class Detail extends Component {
         console.log("projectId:" + projectId);
         console.log("groupId:" + groupId);
         console.log("employeeId:" + employeeId);
-        let t={projectId:projectId,groupId:groupId,userId:employeeId};
+        let t={projectId:projectId,groupId:groupId,userId:employeeId}
         this.setState({isVisible:true,queryTerms:t})
     };
 

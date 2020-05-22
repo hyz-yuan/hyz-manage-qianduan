@@ -1,53 +1,54 @@
 import React, { Component } from  'react'
-import {Button, message,Input,Table,Select} from "antd";
+import {
+    Button,
+    message,
+    Modal,
+    Table,
+    Card } from "antd";
+import {
+    PlusOutlined
+} from '@ant-design/icons';
 import {fetchPost} from "../../../utils/fetch";
+
+import AddForm from "./add-form";
+import UpdateForm from "./update-form";
+import mememoryUtils from "../../../utils/memoryUtils";
+
 export  default class Place extends Component{
 
     state={
         columns:[
-            // {
-            //     title: '序号',
-            //     dataIndex: 'id',
-            //     key:'id'
-            // },
-
             {
                 title: '位置',
                 dataIndex: 'workPlace',
-                editable:true,
-                key:'workPlace',
-                render:(text,record)=>(
-
-                    <Input size="default" value={record.workPlace}
-
-                           onChange={(e)=>this.inputChange({workPlace:e.target.value},record)}
-
-                           onBlur={this.handleOnBlur.bind(this,record)}
-                    />
-
-                )
+                width:'70%',
             },
             {
                 title:'操作',
                 dataIndex: '123',
-                key:'123',
                 render:(text,record)=>(
                     <span>
-                        <Button onClick={this.deleteChange.bind(this,record)}>删除</Button>
+                        <a onClick={()=>this.showUpdateModal(record)}>修改</a>&nbsp;&nbsp;
+                        <a onClick={()=>this.showDeleteModal(record)}>删除</a>
                      </span>
                 )
             },
 
         ],
-        data:[],
         dataSource:[],
+        operator: mememoryUtils.user,//当前操作者
+        modalData:[],//存储正在进行操作的数据（行）
+        oldWorkPlace:'',//存储当前的地址名
+        newWorkPlace:'',//存储要添加或修改的地址名
+        visibleState: 0,//0是不显示，1是显示添加，2是显示修改，3是显示删除
     };
 
     componentDidMount() {
         this.requestData();
-
     }
-
+    /*
+    * 设置表的格式
+    * */
     setProjectData=(list)=>{
         this.setState({
             data: list.map((item, index) =>{
@@ -64,21 +65,100 @@ export  default class Place extends Component{
             }),
         })
     };
+    /*
+    * 对话框的显示
+    * */
+    showAddModal=()=>{
 
-    inputChange=(e,record)=> {
-        console.log(e);
-        for(let i in e){
-            record[i]=e[i];
-        }
         this.setState({
-            workPlace:e,
+            visibleState :1,
 
         })
     };
-
+    showUpdateModal=(record)=>{
+        this.setState({
+            visibleState :2,
+            modalData:record,
+            oldWorkPlace:record.workPlace,
+        })
+    };
+    showDeleteModal=(record)=>{
+        this.setState({
+            visibleState :3,
+            modalData:record,
+        })
+    };
     /*
-    * 获取表
+    * 对话框的ok操作
     * */
+    /*
+    * 添加
+    * */
+    handleAddOk = () => {
+        const {operator,modalData, oldWorkPlace, newWorkPlace}=this.state;
+
+        //定义参数
+        let url = global.constants.insertWorkPlace;
+        let params = {
+            workPlace: newWorkPlace,
+            operator:operator.realName,
+        };
+        //数据操作
+        this.insertName(url,params);
+        //关闭
+        this.setState({
+            visibleState: 0,
+        });
+    };
+    /*
+    * 更新
+    * */
+    handleUpdateOk = () => {
+        const {operator,modalData, oldWorkPlace, newWorkPlace}=this.state;
+        //定义参数
+        let url = global.constants.updateWorkPlace;
+        let params = {
+            id:modalData.id,
+            workPlace: newWorkPlace,
+            operator:operator.realName,
+        };
+        //数据操作
+        this.updateChange(url,params);
+        //关闭
+        this.setState({
+            visibleState: 0,
+        });
+    };
+    /*
+    * 删除
+    * */
+    handleDeleteOk = () => {
+        const {operator,modalData, oldWorkPlace, newWorkPlace}=this.state;
+        //定义参数
+        let url = global.constants.deleteWorkPlace;
+        let params = {
+            id:modalData.id,
+        };
+        //数据操作
+        this.deleteChange(url,params);
+        //关闭
+        this.setState({
+            visibleState: 0,
+        });
+    };
+    /*
+     * 对话框的Cancel操作
+     * */
+    handleCancel = e => {
+        console.log(e);
+        this.setState({
+            visibleState: 0,
+        });
+    };
+    //数据库操作
+    /*
+   * 获取表
+   * */
     requestData=()=>{
         let params={};
         fetchPost(global.constants. WorkPlaceSelect,params)
@@ -93,85 +173,10 @@ export  default class Place extends Component{
             })
     };
     /*
-    * 增加一行
-    * */
-    onClickAdd = () => {
-        const  {dataSource,data}  = this.state;
-        if(dataSource.length!==data.length){
-            message.info('一次只能添加一个数据');
-            return ;
-        }
-        const newData = {
-            workPlace: '',
-            key: dataSource.length+1,
-        };
-        console.log(dataSource);
-        this.setState({
-            dataSource: [...dataSource,newData],
-        });
-    };
-    /*
-    * 删除一行,判断删除新添加的还是要删除的
-    * */
-    onClickRemove=(record)=>{
-        const  {data,dataSource} =this.state;
-        if(record.workPlace.length===0){
-            const  {data}  = this.state;
-            this.setState({
-                dataSource: data,
-            });
-            message.success('无操作');
-            return;
-        }else {
-            this.deleteChange(record);
-            return;
-        }
-    };
-    /*
-    * 删除数据
-    * */
-    deleteChange=(record)=>{
-        let params1={id:record.id,};
-        fetchPost(global.constants.deleteWorkPlace,params1)
-            .then(
-                res => {message.info("删除成功");
-                    this.requestData();
-                })
-
-            .catch(e => console.log(e))
-            .finally(() => {
-                this.setState({
-                    requestLoading: false
-                })
-
-            })
-
-    };
-    /*
-    * 判断修改的数据是否是新增的数据决定调用的函数
-    * */
-    handleOnBlur=(record)=>{
-        const  {data,dataSource} =this.state;
-        if(dataSource.length!==data.length){
-            this.insertName(record);
-            return;
-        }else {
-            this.updateChange(record);
-            return;
-        }
-    };
-    /*
     * 添加数据
     * */
-    insertName=(record)=>{
-        if(record.workPlace.length===0){
-            message.info('请写入值');
-            return ;
-        }
-        let params={
-            workPlace:record.workPlace,
-        };
-        fetchPost(global.constants.insertWorkPlace,params)
+    insertName=(url,params)=>{
+        fetchPost(url,params)
             .then(
                 res => {
                     message.success('添加成功');
@@ -187,16 +192,8 @@ export  default class Place extends Component{
     /*
     * 更新数据
     * */
-    updateChange=(record)=>{
-        if(record.workPlace.length===0){
-            message.info('请写入值');
-            return ;
-        }
-        let params1={
-            id:record.id,
-            workPlace:record.workPlace,
-        };
-        fetchPost(global.constants.updateWorkPlace,params1)
+    updateChange=(url,params)=>{
+        fetchPost(url,params)
             .then(
                 res => {message.info("更新成功");
                 }
@@ -208,19 +205,90 @@ export  default class Place extends Component{
                 });
                 this.requestData();})
     };
+    /*
+    * 删除数据
+    * */
+    deleteChange=(url,params)=>{
+        fetchPost(url,params)
+            .then(
+                res => {message.info("删除成功");
+                    this.requestData();
+                })
+
+            .catch(e => console.log(e))
+            .finally(() => {
+                this.setState({
+                    requestLoading: false
+                })
+
+            })
+
+    };
 
     render(){
+        const {dataSource,columns}=this.state;
+        const workPlace = this.state.oldWorkPlace ||{};
+        //card左侧标签
+        const title = '地域管理';
+        //card右侧标签
+        const extra =(
+            <Button
+                type='primary'
+                onClick={this.showAddModal}
+                style={{borderRadius:'6px',marginLeft:'6px'}}
+                icon= {<PlusOutlined/>}
+            >新增</Button>
+        );
         return(
-            <div style={{width:'100%'}}>
-
-                <Button onClick={this.onClickAdd} style={{borderRadius:'6px',marginLeft:'6px'}}>新增</Button>
+            <Card title={title} extra={extra}>
                 <Table
-                    dataSource={this.state.dataSource}
-                    columns={this.state.columns}
-                    rowKey={'key'}
+                    bordered
+                    dataSource={dataSource}
+                    columns={columns}
+                    rowKey='key'
                     scroll={{ y: 425 }}
                 />
-            </div>
+                <Modal
+                    title="添加"
+                    visible={this.state.visibleState===1}
+                    onOk={this.handleAddOk}
+                    onCancel={this.handleCancel}
+                    destroyOnClose
+                >
+                    <AddForm
+                        rtWorkPlace={(newWorkPlace)=>{
+                            this.setState({
+                                newWorkPlace:newWorkPlace,
+                            });
+                        }}
+
+                    />
+                </Modal>
+                <Modal
+                    title="修改"
+                    visible={this.state.visibleState===2}
+                    onOk={this.handleUpdateOk}
+                    onCancel={this.handleCancel}
+                    destroyOnClose
+                >
+                    <UpdateForm
+                        workPlace={workPlace}
+                        rtWorkPlace={(newWorkPlace)=>{
+                            this.setState({
+                                newWorkPlace:newWorkPlace,
+                            });
+                        }}
+                    />
+                </Modal>
+                <Modal
+                    title="删除"
+                    visible={this.state.visibleState===3}
+                    onOk={this.handleDeleteOk}
+                    onCancel={this.handleCancel}
+                    destroyOnClose
+                >是否删除数据
+                </Modal>
+            </Card>
         )
     }
 }

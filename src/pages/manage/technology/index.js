@@ -1,19 +1,21 @@
 import * as React from "react";
-import {Table, Button, Popconfirm, Form,  Input,Select} from "antd/lib/index";
+import {Table, Button, Select} from "antd/lib/index";
 import {fetchPost} from "../../../utils/fetch";
-import RightBodyHeaderBar from "../../../components/rightBodyHeaderBar";
 
-import {useState} from "react";
-import {useRef} from "react";
-import {useContext} from "react";
-import {useEffect} from "react";
-const EditableContext = React.createContext();
+import {PlusOutlined} from "@ant-design/icons";
+import {Card, Modal} from "antd";
+import AddForm from "./add-form";
+import UpdateForm from "./update-form";
+import mememoryUtils from "../../../utils/memoryUtils";
+import {message} from "antd/es";
+
+
 export default class Technology extends React.Component{
     state={
         columns: [
             {
                 title: '上级名称',
-                dataIndex: 'pId',
+                dataIndex: 'pIdName',
                 width: '30%',
                 inputType:'select',
                 editable: true,
@@ -24,112 +26,128 @@ export default class Technology extends React.Component{
                 editable: true,
             },
             {
-                title: '操作',
-                dataIndex: 'operation',
-                render: (text, record) =>
-                    this.state.dataSource.length >= 1 ? (
-                        <Popconfirm title="确认删除吗?" onConfirm={() => this.handleDelete(record.key)}>
-                            <a>删除</a>
-                        </Popconfirm>
-                    ) : null,
+                title:'操作',
+                dataIndex: '123',
+                render:(text,record)=>(
+                    <span>
+                        <a onClick={()=>this.showUpdateModal(record)}>修改</a> &nbsp;&nbsp;
+                        <a onClick={()=>this.showDeleteModal(record)}>删除</a>
+                     </span>
+                )
             },
         ],
         title:"技术管理",
         dataSource: [],
+        operator: mememoryUtils.user,//当前操作者
+        modalData:[],//存储正在进行操作的数据（行）
+        visibleState: 0,//0是不显示，1是显示添加，2是显示修改，3是显示删除
+        newPId:0,
+        currentId:-1,
+        newTechnology:'',
     };
 
-    EditableRow = ({ index, ...props }) => {
-        const [form] = Form.useForm();
-        return (
-            <Form form={form} component={false}>
-                <EditableContext.Provider value={form}>
-                    <tr {...props} />
-                </EditableContext.Provider>
-            </Form>
-        );
+    /*
+    * 对话框的显示
+    * */
+    showAddModal=()=>{
+        this.setState({
+            visibleState :1,
+        })
     };
+    showUpdateModal=(record)=>{
+        this.setState({
+            visibleState :2,
+            modalData:record,
+            currentId:record.id,
+        })
+    };
+    showDeleteModal=(record)=>{
+        this.setState({
+            visibleState :3,
+            modalData:record,
+            currentId:record.id,
+        })
+    };
+    /*
+    * 对话框的ok操作
+    * */
+    /*
+    * 添加
+    * */
+    handleAddOk = () => {
+        const {operator, newPId,newTechnology}=this.state;
 
-    EditableCell = ({
-                        title,
-                        editable,
-                        children,
-                        inputType,
-                        dataIndex,
-                        record,
-                        handleSave,
-                        ...restProps
-                    }) => {
-        const [editing, setEditing] = useState(false);
-        const inputRef = useRef();
-        const form = useContext(EditableContext);
-        useEffect(() => {
-            if (editing) {
-                inputRef.current.focus();
-            }
-        }, [editing]);
-
-        const toggleEdit = () => {
-            const value =record[dataIndex];
-            setEditing(!editing);
-            form.setFieldsValue({
-                [dataIndex]: value,
-            });
+        //定义参数
+        let url = global.constants.insertTechnology;
+        let params = {
+            pId: newPId,
+            technologyName:newTechnology,
+            operator:operator.realName,
         };
-
-        const save = async e => {
-            try {
-                const values = await form.validateFields();
-                toggleEdit();
-                handleSave({ ...record, ...values });
-            } catch (errInfo) {
-                console.log('Save failed:', errInfo);
-            }
+        //数据操作
+        this.requestUpdate(url,params);
+        //关闭
+        this.setState({
+            visibleState: 0,
+        });
+    };
+    /*
+    * 更新
+    * */
+    handleUpdateOk = () => {
+        const {operator, modalData,newPId,newTechnology}=this.state;
+        //定义参数
+        let url = global.constants.updateTechnology;
+        let params = {
+            id:modalData.id,
+            pId: newPId,
+            technologyName:newTechnology,
+            operator:operator.realName,
         };
-
-        let childNode = children;
-
-        if (editable) {
-            const inputNode =inputType === 'select' ?
-                <Select  style={{ width: 120 }} ref={inputRef} onChange={save}>    {this.options}    </Select>
-                : <Input ref={inputRef} onBlur={save} />;
-            childNode = editing ? (
-                <Form.Item
-                    style={{
-                        margin: 0,
-                    }}
-                    name={dataIndex}
-                >
-                    {inputNode}
-                </Form.Item>
-            ) : (
-                <div
-                    className="editable-cell-value-wrap"
-                    style={{
-                        paddingRight: 24,
-                    }}
-                    onClick={toggleEdit}
-                >
-                    {children}
-                </div>
-            );
-        }
-
-        return <td {...restProps}>{childNode}</td>;
+        //数据操作
+        this.requestUpdate(url,params);
+        //关闭
+        this.setState({
+            visibleState: 0,
+        });
+    };
+    /*
+    * 删除
+    * */
+    handleDeleteOk = () => {
+        const {operator, modalData}=this.state;
+        //定义参数
+        let url = global.constants.deleteTechnology;
+        let params = {
+            id:modalData.id,
+            operator:operator.realName,
+        };
+        //数据操作
+        this.requestUpdate(url,params);
+        //关闭
+        this.setState({
+            visibleState: 0,
+        });
+    };
+    /*
+     * 对话框的Cancel操作
+     * */
+    handleCancel = e => {
+        console.log(e);
+        this.setState({
+            visibleState: 0,
+        });
     };
 
-
-
-    options=[];//下列列表选项
     componentDidMount() {
         this.loadData();
-        this.options.push(<Select key='0'>第一级</Select>);
-    }
-    loadData(){
-        let params={};
-        this.requestProgress(global.constants.technologySelect,params);
     }
 
 
+
+    /*
+    * 数据库操作
+    * */
     requestProgress = (url,params) =>{
         fetchPost(url,params)
             .then(
@@ -142,8 +160,22 @@ export default class Technology extends React.Component{
                 })
             })
     };
-
-
+    requestUpdate = (url,params) =>{
+        fetchPost(url,params)
+            .then(
+                res=>message.info(res)
+            )
+            .catch(e => console.log(e))
+            .finally(() => {
+                this.loadData();
+                this.setState({
+                    requestLoading: false
+                })
+            })
+    };
+    /*
+    * 转换数据格式
+    * */
     setData = (list) => {
         let pname ={};
         this.options=[];
@@ -157,7 +189,7 @@ export default class Technology extends React.Component{
             dataSource: list.map((item, index) => {
                 return {
                     ...item,
-                    pId:item.pId===0?"第一级":pname[item.pId],
+                    pIdName:item.pId===0?"第一级":pname[item.pId],
                     key: index
 
                 }
@@ -165,6 +197,16 @@ export default class Technology extends React.Component{
         })
         //message.info("保存成功！")
     };
+    /*
+    * 获取数据表
+    * */
+    loadData(){
+        let params={};
+        this.requestProgress(global.constants.technologySelect,params);
+    };
+    /*
+    * 删除数据
+    * */
     handleDelete = key => {
         const dataSource = [...this.state.dataSource];
         let params={
@@ -173,75 +215,82 @@ export default class Technology extends React.Component{
         this.requestProgress(global.constants.deleteTechnology,params);
     };
 
-    handleAdd = () => {
-        let params={
-            pId:0,
-        };
-        this.requestProgress(global.constants.insertTechnology,params);
-    };
 
-    handleSave = row => {
-        const newData = [...this.state.dataSource];
-        const index = newData.findIndex(item => row.key === item.key);
-        const item = newData[index];
-        newData.splice(index, 1, { ...item, ...row });
-        this.setState({
-            dataSource: newData,
-        });
-        let reg=/\d/; //正则表达式，测试是否只包含数字
-        let params={
-            id : row.id,
-            technologyName:row.technologyName,
-            pId:reg.test(row.pId)?row.pId:null, /// will cause error
-        };
-        this.requestProgress(global.constants.updateTechnology,params);
-    };
-
-    render() {
-        const {dataSource} = this.state;
-        const components = {
-            body: {
-                row: this.EditableRow,
-                cell: this.EditableCell,
-            },
-        };
-        const columns = this.state.columns.map(col => {
-            if (!col.editable) {
-                return col;
-            }
-            return {
-                ...col,
-                onCell: record => ({
-                    record,
-                    inputType: col.inputType,
-                    editable: col.editable,
-                    dataIndex: col.dataIndex,
-                    title: col.title,
-                    handleSave: this.handleSave,
-                }),
-            };
-        });
-        return (
-                <div style={{width:'100%'}}>
-                    <Button
-                        onClick={this.handleAdd}
-                        type="primary"
-                        style={{
-                            marginBottom: 16,
+    render(){
+        const {dataSource,columns}=this.state;
+        const currentId = this.state.currentId ;
+        //card左侧标签
+        const title = '技术管理';
+        //card右侧标签
+        const extra =(
+            <Button
+                type='primary'
+                onClick={this.showAddModal}
+                style={{borderRadius:'6px',marginLeft:'6px'}}
+                icon= {<PlusOutlined/>}
+            >新增</Button>
+        );
+        return(
+            <Card title={title} extra={extra}>
+                <Table
+                    bordered
+                    dataSource={dataSource}
+                    columns={columns}
+                    rowKey='key'
+                    scroll={{ y: 425 }}
+                />
+                <Modal
+                    title="添加"
+                    visible={this.state.visibleState===1}
+                    onOk={this.handleAddOk}
+                    onCancel={this.handleCancel}
+                    destroyOnClose
+                >
+                    <AddForm
+                        rtNewTechnology={(technology)=>{
+                            this.setState({
+                                newTechnology:technology,
+                            });
                         }}
-                    >
-                        新增
-                    </Button>
-                    <Table
-                        style={{ width: 500 }}
-                        components={components}
-                        rowClassName={() => 'editable-row'}
-                        bordered
-                        dataSource={dataSource}
-                        columns={columns}
-                        scroll={{ y: 425 }}
+                        rtNewPid={(pid)=>{
+                            this.setState({
+                                newPid:pid,
+                            })
+                        }}
+
                     />
-                </div>
+                </Modal>
+                <Modal
+                    title="修改"
+                    visible={this.state.visibleState===2}
+                    onOk={this.handleUpdateOk}
+                    onCancel={this.handleCancel}
+                    destroyOnClose
+                >
+                    <UpdateForm
+                        currentId={currentId}
+                        rtNewTechnology={(technology)=>{
+                            this.setState({
+                                newTechnology:technology,
+                            });
+                        }}
+                        rtNewPid={(pid)=>{
+                            this.setState({
+                                newPid:pid,
+                            })
+                        }}
+
+                    />
+                </Modal>
+                <Modal
+                    title="删除"
+                    visible={this.state.visibleState===3}
+                    onOk={this.handleDeleteOk}
+                    onCancel={this.handleCancel}
+                    destroyOnClose
+                >是否删除数据
+                </Modal>
+            </Card>
         )
     }
 }

@@ -1,87 +1,143 @@
 import * as React from "react";
-import {Button, Popconfirm, Select, Table} from "antd";
+import {Button, Card, Modal, Popconfirm, Select, Table} from "antd";
 import {Component} from "react";
 import {fetchPost} from "../../../utils/fetch";
-import RightBodyHeaderBar from "../../../components/rightBodyHeaderBar";
+import {PlusOutlined} from "@ant-design/icons";
+import mememoryUtils from "../../../utils/memoryUtils";
 const { Option } = Select;
 export default class Right extends Component{
     state={
-        buttonValue:"新增",
         title:"权限管理",
         columns:[
-            {title:'序号',dataIndex:'Index'},
-            {title:'上级菜单',dataIndex:'lastMenus',
-                render:(text,record)=>(
-                    <span>
-                 <Select
-                     defaultValue={this.state.data[record.key].pRights}
-                     style={{ width: '100%' }}
-                     onChange={(value)=>this.handleChange({lastMenus:value},record)}
-                     onBlur={(e)=>this.inputOnBlur(record)}>
-                     {this.state.data.map((item,index) => <Option key={index} value={item.id}>{item.rights}</Option>)}
-                 </Select>
-               </span>)},
-            {title:'权限名',dataIndex:'rights',
-                render:(text,record)=>(
-                    <span>
-               <input
-                   value={this.state.data[record.key].rights}
-                   onChange={(e)=>this.handleChange({rights:e.target.value},record)}
-                   onBlur={(e)=>this.inputOnBlur(record)}
-               />
-               </span>),
-            },
-            {title:'链接',dataIndex:'urls',
-                render:(text,record)=>(
-                    <span>
-               <input
-                   value={this.state.data[record.key].urls}
-                   onChange={(e)=>this.handleChange({urls:e.target.value},record)}
-                   onBlur={(e)=>this.inputOnBlur(record)}
-               />
-               </span>)},
-            {title:'备注',dataIndex:'notes',
-                render:(text,record)=>(
-                    <span>
-               <input
-                   value={this.state.data[record.key].notes}
-                   onChange={(e)=>this.handleChange({notes:e.target.value},record)}
-                   onBlur={(e)=>this.inputOnBlur(record)}
-               />
-               </span>)},
+            {title:'上级菜单',dataIndex:'lastMenus'},
+            {title:'权限名',dataIndex:'rights'},
+            {title:'链接',dataIndex:'urls'},
+            {title:'备注',dataIndex:'notes'},
             {
-                title: '操作',
-                key: 'action',
-                render: (text, record) => (
-                    <Popconfirm title="Sure to delete?" onConfirm={() => this.deleteRight(record)}>
-                        <a>删除</a>
-                    </Popconfirm>
-                ),
+                title:'操作',
+                dataIndex: '123',
+                render:(text,record)=>(
+                    <span>
+                        <a onClick={()=>this.showUpdateModal(record)}>修改</a>&nbsp;&nbsp;
+                        <a onClick={()=>this.showDeleteModal(record)}>删除</a>
+                     </span>
+                )
             },
         ],
-        data:[],
+        dataSource:[],
+        visibleState: 0,//0是不显示，1是显示添加，2是显示修改，3是显示删除
+        operator: mememoryUtils.user,//当前操作者
+        modalData:[],//存储正在进行操作的数据（行）
 
     };
 
     componentDidMount(){
         this.setRight()
     }
-
+    /*
+   * 设置表的格式
+   * */
     setProjectData =(list)=>{
         this.setState({
-                data: list.map((item, index) => {
+            dataSource: list.map((item, index) => {
                     return {
                         ...item,
-                        id:item.id,
-                        deleteFlag:item.delFlag,
-                        Index:index+1,
                         key: index,
-                        flag: false
                     }
                 }),
             }
         )
     };
+    /*
+    * 对话框的显示
+    * */
+    showAddModal=()=>{
+        this.setState({
+            visibleState :1,
+
+        })
+    };
+    showUpdateModal=(record)=>{
+        this.setState({
+            visibleState :2,
+            modalData:record,
+            oldWorkPlace:record.workPlace,
+        })
+    };
+    showDeleteModal=(record)=>{
+        this.setState({
+            visibleState :3,
+            modalData:record,
+        })
+    };
+    /*
+    * 对话框的ok操作
+    * */
+    /*
+    * 添加
+    * */
+    handleAddOk = () => {
+        const {operator,modalData, oldWorkPlace, newWorkPlace}=this.state;
+
+        //定义参数
+        let url = global.constants.insertWorkPlace;
+        let params = {
+            workPlace: newWorkPlace,
+            operator:operator.realName,
+        };
+        //数据操作
+        this.insertName(url,params);
+        //关闭
+        this.setState({
+            visibleState: 0,
+        });
+    };
+    /*
+    * 更新
+    * */
+    handleUpdateOk = () => {
+        const {operator,modalData, oldWorkPlace, newWorkPlace}=this.state;
+        //定义参数
+        let url = global.constants.updateWorkPlace;
+        let params = {
+            id:modalData.id,
+            workPlace: newWorkPlace,
+            operator:operator.realName,
+        };
+        //数据操作
+        this.updateChange(url,params);
+        //关闭
+        this.setState({
+            visibleState: 0,
+        });
+    };
+    /*
+    * 删除
+    * */
+    handleDeleteOk = () => {
+        const {operator,modalData, oldWorkPlace, newWorkPlace}=this.state;
+        //定义参数
+        let url = global.constants.deleteWorkPlace;
+        let params = {
+            id:modalData.id,
+        };
+        //数据操作
+        this.deleteChange(url,params);
+        //关闭
+        this.setState({
+            visibleState: 0,
+        });
+    };
+    /*
+     * 对话框的Cancel操作
+     * */
+    handleCancel = e => {
+        console.log(e);
+        this.setState({
+            visibleState: 0,
+        });
+    };
+
 
     setRight=()=>{
         let params={};
@@ -126,44 +182,70 @@ export default class Right extends Component{
             })
     };
 
-    handleChange = (value, record) => {
-        for (let i in value) {
-            record[i] = value[i];//这一句是必须的，不然状态无法更改
-        }
-        this.setState({
-            lastMenus:record,
-            rights:record,
-            urls:record,
-            notes:record
-        })
-    };
-
-    inputOnBlur=(record)=>{
-        let params={id:record.id,
-            lastMenus:record.lastMenus,
-            rights:record.rights,
-            urls:record.urls,
-            notes:record.notes,
-        };
-        fetchPost(global.constants.updateRight,params)
-            .then(
-            )
-            .catch(e => console.log(e))
-            .finally(() => {
-                this.setState({
-                    requestLoading: false
-                });
-                this.setRight();
-            })
-    };
-
     render(){
+        const {dataSource,columns}=this.state;
+        const workPlace = this.state.oldWorkPlace ||{};
+        //card左侧标签
+        const title = '权限管理';
+        //card右侧标签
+        const extra =(
+            <Button
+                type='primary'
+                onClick={this.showAddModal}
+                style={{borderRadius:'6px',marginLeft:'6px'}}
+                icon= {<PlusOutlined/>}
+            >新增</Button>
+        );
         return (
-            <div>
-                <RightBodyHeaderBar title={this.state.title}/>
-                <Button onClick={()=>this.insertRight()}>新增</Button>
-                <Table dataSource={this.state.data} pagination={{pageSize: 7}} columns={this.state.columns}/>
-            </div>
+            <Card title={title} extra={extra}>
+                <Table
+                    bordered
+                    dataSource={dataSource}
+                    columns={columns}
+                    rowKey='key'
+                    scroll={{ y: 425 }}
+                />
+                <Modal
+                    title="添加"
+                    visible={this.state.visibleState===1}
+                    onOk={this.handleAddOk}
+                    onCancel={this.handleCancel}
+                    destroyOnClose
+                >
+                    {/*<AddForm
+                        rtWorkPlace={(newWorkPlace)=>{
+                            this.setState({
+                                newWorkPlace:newWorkPlace,
+                            });
+                        }}
+
+                    />*/}
+                </Modal>
+                <Modal
+                    title="修改"
+                    visible={this.state.visibleState===2}
+                    onOk={this.handleUpdateOk}
+                    onCancel={this.handleCancel}
+                    destroyOnClose
+                >
+                    {/*<UpdateForm
+                        workPlace={workPlace}
+                        rtWorkPlace={(newWorkPlace)=>{
+                            this.setState({
+                                newWorkPlace:newWorkPlace,
+                            });
+                        }}
+                    />*/}
+                </Modal>
+                <Modal
+                    title="删除"
+                    visible={this.state.visibleState===3}
+                    onOk={this.handleDeleteOk}
+                    onCancel={this.handleCancel}
+                    destroyOnClose
+                >是否删除数据
+                </Modal>
+            </Card>
         )
     }
 

@@ -16,7 +16,7 @@
     "react-dom": "^16.13.0",
     "react-gantt-timeline": "^0.4.3",
     "react-loadable": "^5.5.0",
-    "react-scripts": "3.4.0",
+    "react-scripts": "5.0.1",
     "time-gantt": "0.0.1"
   },
   "scripts": {
